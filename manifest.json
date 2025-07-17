@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "HackerOne Color Replacer",
+  "version": "1.0",
+  "description": "Replaces specific colors on HackerOne responses with enable/disable toggle",
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "HackerOne Color Replacer"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.hackerone.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "host_permissions": [
+    "*://*.hackerone.com/*"
+  ]
+}

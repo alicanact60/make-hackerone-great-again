@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        body {
+            width: 280px;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            margin: 0;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .header h1 {
+            font-size: 16px;
+            margin: 0 0 5px 0;
+            color: #ffffff;
+        }
+        
+        .header p {
+            font-size: 12px;
+            margin: 0;
+            color: #888;
+        }
+        
+        .toggle-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #2a2a2a;
+            border-radius: 8px;
+        }
+        
+        .toggle-label {
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .toggle-switch {
+            position: relative;
+            width: 50px;
+            height: 24px;
+            background-color: #555;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .toggle-switch.active {
+            background-color: #4CAF50;
+        }
+        
+        .toggle-slider {
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border-radius: 50%;
+            transition: transform 0.3s;
+        }
+        
+        .toggle-switch.active .toggle-slider {
+            transform: translateX(26px);
+        }
+        
+        .status {
+            text-align: center;
+            font-size: 12px;
+            margin: 15px 0;
+            padding: 10px;
+            border-radius: 6px;
+        }
+        
+        .status.enabled {
+            background-color: rgba(76, 175, 80, 0.2);
+            color: #4CAF50;
+        }
+        
+        .status.disabled {
+            background-color: rgba(244, 67, 54, 0.2);
+            color: #f44336;
+        }
+        
+        .info {
+            font-size: 11px;
+            color: #aaa;
+            text-align: center;
+            margin-top: 15px;
+            line-height: 1.4;
+        }
+        
+        .reload-notice {
+            font-size: 11px;
+            color: #ff9800;
+            text-align: center;
+            margin-top: 10px;
+            display: none;
+        }
+        
+        .footer {
+            font-size: 10px;
+            color: #666;
+            text-align: center;
+            margin-top: 15px;
+            padding-top: 10px;
+            border-top: 1px solid #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>HackerOne Color Replacer</h1>
+        <p>Color replacer for hackerone.com</p>
+    </div>
+    
+    <div class="toggle-container">
+        <span class="toggle-label">Extension</span>
+        <div class="toggle-switch" id="toggleSwitch">
+            <div class="toggle-slider"></div>
+        </div>
+    </div>
+    
+    <div class="status" id="statusDiv">
+        <span id="statusText">Loading...</span>
+    </div>
+    
+    <div class="reload-notice" id="reloadNotice">
+        Please reload the page to apply changes
+    </div>
+    
+    <div class="info">
+        This extension replaces the following colors with #161616:<br>
+        • rgb(28 31 53 / var(--tw-bg-opacity))<br>
+        • rgb(38 43 68 / var(--tw-bg-opacity))<br>
+        • #262b44<br>
+        • #1C1F35
+    </div>
+    
+    <div class="footer">
+        by: hackerone.com/ali
+    </div>
+    
+    <script src="popup.js"></script>
+</body>
+</html> 
