@@ -198,6 +198,11 @@
                 background: #161616 !important;
             }
             
+            /* Target report links */
+            .report-to-link.text-black {
+                color: #ffffff !important;
+            }
+            
             /* Target by computed color values */
             div[style*="background-color: rgb(28, 31, 53)"],
             div[style*="background-color: rgb(38, 43, 68)"],
